@@ -61,7 +61,17 @@
 						<span class="menu-title">Data Diskon</span>
 					</a>
 				</li>
-
+				<li class="nav-item">
+					<span class="nav-link" href="#">
+						<span class="menu-title">Pelanggan</span>
+					</span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('Admin/cPelanggan') ?>">
+						<i class="mdi mdi-account-multiple menu-icon"></i>
+						<span class="menu-title">Data Pelanggan</span>
+					</a>
+				</li>
 				<li class="nav-item">
 					<span class="nav-link" href="#">
 						<span class="menu-title">Transaksi</span>

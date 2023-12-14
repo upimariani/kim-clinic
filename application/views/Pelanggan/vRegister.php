@@ -27,7 +27,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" name="no_hp" class="form-control" placeholder="No Telepon">
+								<input type="number" name="no_hp" class="form-control" placeholder="No Telepon">
 								<?= form_error('no_hp', '<small class="text-danger">', '</small>') ?>
 							</div>
 						</div>

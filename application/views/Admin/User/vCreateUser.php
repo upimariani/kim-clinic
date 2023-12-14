@@ -25,7 +25,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputUsername1">No Telepon</label>
-								<input type="text" name="no_hp" value="<?= set_value('no_hp') ?>" class="form-control" />
+								<input type="number" name="no_hp" value="<?= set_value('no_hp') ?>" class="form-control" />
 								<?= form_error('no_hp', '<small class="text-danger">', '</small>') ?>
 							</div>
 							<div class="form-group">

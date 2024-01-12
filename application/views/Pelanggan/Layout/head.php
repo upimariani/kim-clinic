@@ -38,21 +38,28 @@
 				<span class="oi oi-menu"></span> Menu
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="<?= base_url('Pelanggan/cHome') ?>" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="<?= base_url('Pelanggan/cPesananSaya') ?>" class="nav-link">Pesanan Saya</a></li>
-					<li class="nav-item"><a href="<?= base_url('Pelanggan/cLogin/logout') ?>" class="nav-link">Logout</a></li>
-					<li class="nav-item"><a href="<?= base_url('Pelanggan/cLogin/logout') ?>" class="nav-link">Selamat Datang, <?= $this->session->userdata('nama_pelanggan') ?><span class="badge badge-success"><?php if ($this->session->userdata('level') == '1') {
-																																																						echo 'Istimewa';
-																																																					} ?></span></a></li>
-					<?php
-					$qty = 0;
-					foreach ($this->cart->contents() as $key => $value) {
-						$qty += $value['qty'];
-					}
-					?>
-					<li class="nav-item"><a href="<?= base_url('Pelanggan/cCheckout') ?>" class="nav-link">Cart <span class="badge badge-success"><?= $qty ?></span></a></li>
-				</ul>
+				<?php
+				if ($this->session->userdata('id_pelanggan') != '') {
+				?>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="<?= base_url('Pelanggan/cHome') ?>" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="<?= base_url('Pelanggan/cPesananSaya') ?>" class="nav-link">Pesanan Saya</a></li>
+						<li class="nav-item"><a href="<?= base_url('Pelanggan/cLogin/logout') ?>" class="nav-link">Logout</a></li>
+						<li class="nav-item"><a href="<?= base_url('Pelanggan/cLogin/logout') ?>" class="nav-link">Selamat Datang, <?= $this->session->userdata('nama_pelanggan') ?><span class="badge badge-success"><?php if ($this->session->userdata('level') == '1') {
+																																																							echo 'Istimewa';
+																																																						} ?></span></a></li>
+						<?php
+						$qty = 0;
+						foreach ($this->cart->contents() as $key => $value) {
+							$qty += $value['qty'];
+						}
+						?>
+						<li class="nav-item"><a href="<?= base_url('Pelanggan/cCheckout') ?>" class="nav-link">Cart <span class="badge badge-success"><?= $qty ?></span></a></li>
+					</ul>
+				<?php
+				}
+				?>
+
 			</div>
 		</div>
 	</nav>
